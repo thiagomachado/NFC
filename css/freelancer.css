@@ -382,3 +382,8 @@ a:focus, a:hover, a:active {
 .justifiedText{
   text-align: justify;
 }
+
+.listaReferencias li{
+  margin-top: 20px;
+  text-align: justify;
+}

@@ -45,7 +45,7 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#funcionamento">Funcionamento</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Ecossistema</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ecossistema">Ecossistema</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Aplicações</a>
@@ -54,7 +54,7 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Conclusão</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Bibliografia</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#referencias">Referências</a>
             </li>
           </ul>
         </div>
@@ -91,7 +91,7 @@
               de ser uma tecnologia de conexão de curta distância de forma
               segura. Logo após sua criação, a Organização Internacional para
               padronização adotou a ISO/IEC 18092 como interface e protocolo de
-              fundação do NFC. <sup><a href="#referencias">[1]</a></sup>
+              fundação do NFC. <sup><a href="#referencias">[2]</a></sup>
             </p>
             <p class="lead">
               Em 2004, Sony, Phillips e Nokia criaram em conjunto o
@@ -120,7 +120,7 @@
               instâncias do mundo virtual ao físico surgiu e cresce a passos
               largos. Nesse sentido, o NFC figura com certo pioneirismo,
               pois permite que objetos, pessoas e lugares se relacionem com
-              conteúdo virtual. <sup><a href="#referencias">[3]</a></sup> Deste
+              conteúdo virtual. <sup><a href="#referencias">[1]</a></sup> Deste
               modo, justifica-se a recente propulsão que este obteve.
             </p>
             <p class="lead">
@@ -153,17 +153,17 @@
               campo o circuito é ativado, configurando uma conexão entre ambos.
               Tal conexão pode ser dada através de três modos: passivo ou
               leitura/escrita, ativo ou peer-to-peer e emulador de cartão.
-              <sup><a href="#referencias" class="text-white">[4]</a></sup> </p>
+              <sup><a href="#referencias" class="text-white">[2]</a></sup> </p>
           </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-md-3 col-lg-4 text-center">
-                <img class="img-fluid" src="img/cardemulator.png" alt=""><br>
+                <img class="img-fluid" src="img/passivo.png" alt=""><br>
                 <label style="tex">Leitura/Escrita</label>
             </div>
             <div class="col-md-3 col-lg-4 text-center">
-                <img class="img-fluid" src="img/cardemulator.png" alt=""><br>
+                <img class="img-fluid" src="img/p2p.png" alt=""><br>
                 <label style="tex">Peer-to-Peer</label>
             </div>
             <div class="col-md-3 col-lg-4 text-center">
@@ -172,9 +172,191 @@
             </div>
         </div>
         <hr>
-
+        <dv class="row">
+          <div class="justifiedText">
+            <p class="lead">
+              No modo passivo, somente o iniciador gera o campo de frequência
+              que energiza o circuito do aparelho alvo e o habilitando para
+              leitura e escrita (Reader/Writer). Dentre os diversos exemplos
+              de alvo, os mais comuns são os tags NFC, pequenos circuitos
+              impressos que podem ser colocados nos mais diferentes tipos de
+              objetos. Devido suas similaridades, tags NFC são comparadas com
+              QR codes porém ambas possuem diferentes funcionalidades e design.
+              Tags NFC possibilitam uma conexão bidirecional com capacidade de
+              armazenamento de 32 kilobytes enquanto os QR codes somente apenas
+              fazem uma interação de um dado específico com até 100 bytes.
+              Além disso, QR codes são menos práticos no sentido que o usuário
+              precisa tirar uma foto do mesmo, enquanto nas tags NFC basta o
+              aparelho entrar em contato com a tag. <sup><a class="text-white"
+                href="#referencias">[2][4]</a></sup>
+            </p>
+            <p class="lead">
+              No modo ativo, ambos os aparelhos emitem o campo de frequência de
+              rádio podendo agir como iniciador ou alvo. Isso se configura em
+              uma arquitetura de redes conhecida como Peer to Peer, P2P. Tal
+              funciona em conjunção com o NFC de modo que permite a troca de
+              informações entre dois aparelhos portadores da tecnologia sem a
+              necessidade de um servidor central. Essa implementação torna
+              possível troca de dados mais complexas. Um exemplo desse modo de
+              funcionamento é o pareamento de Bluetooth ou redes Wi-Fi. A troca
+              de dados possibilita a rápida configuração dessas conexões.
+              <sup><a class="text-white" href="#referencias">[2][4]</a></sup>
+            </p>
+            <p class="lead">
+              O modo emulador de cartão (do inglês card emulator)  é utilizado
+              principalmente por smartphones e faz com que o dispositivo não
+              emita um campo de radiofrequência, ao invés disso o campo é
+              emitido por um dispositivo de leitura que pode ser uma máquina
+              para pagamento com cartões com chip de contato. Esse modo permite
+              que um smartphone seja usado como cartão de crédito ou débito.
+            </p>
+            <p class="lead">
+              Existem padrões internacionais de interface NFC que precisam ser
+              respeitados, tais  são definidos em pares ISO e ECMA.
+              O par ISO/IEC 18092 e ECMA-340 definem o NFCIP, NFC Interface e
+              Protocolo (do inglês Near Field Communication Interface and
+              Protocol), especificando o modo da conexão, a velocidade de
+              transferência de dados, protocolos de transporte, entre outros.
+              Além dele, existe o par ISO/IEC 21841 e ECMA-352 cujo definem o
+              NFCIP-2 pormenorizando o mínimo de interferência com outros
+              aparelhos.<sup><a class="text-white" href="#referencias">[9]</a>
+              </sup>
+            </p>
+          </div>
+        </div>
+        <hr>
       </div>
     </section>
+
+    <!-- Introdução -->
+    <section id="ecossistema">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Ecossistema</h2>
+        <hr class="mb-5">
+        <div class="row justifiedText">
+          <p class="lead">
+            Um dos aspectos mais interessantes acerca do NFC está no legado de
+            protocolos criados a partir dos padrões estabelecidos pela
+            tecnologia. Com isso, diversas aplicações específicas têm sido
+            construídas, aumentando a relevância e difundindo conhecimento
+            tecnológico. Abaixo, estão listados alguns desses protocolos,
+            assim como uma discussão sobre a usabilidade de ferramentas
+            baseadas no NFC.
+          </p>
+        </div>
+        <h3 class="text-uppercase text-secondary mb-0">
+          Protocolos criados a partir do NFC
+        </h3>
+        <hr>
+        <div class="row justifiedText">
+          <ul type="square">
+            <li>
+              <p class="lead">
+                NDEF Exchange Protocol (SNEP):<br>
+                O protocolo de formato de troca de dados via NFC
+                (do inglês NFC Data Exchange Format) tem por objetivo padronizar
+                a comunicação entre dispositivos no momento do compartilhamento
+                de arquivos. O interessante desta tecnologia é a sua capacidade
+                de configurar transferências de objetos MIME (Extensão de
+                Internet Mail para multipropósitos), URIs ou tipos específicos,
+                o que o permite trocar imagens, PDFs, vídeos e diversos outros
+                tipos de arquivo. Uma mensagem NDEF tem o seguinte formato:
+              </p>
+              <div class="row justify-content-center">
+                <div class="col-8 align-self-center">
+                  <img class="img-fluid" src="img/format.png" alt="">
+                </div>
+              </div>
+              <br>
+              <p class="lead">
+                Onde é especificado um cabeçalho indicando o início e fim da
+                mensagem, um sinal de “arquivo pequeno”, o tamanho do tipo, o
+                tamanho da carga, o tamanho da identificação da cara, o tipo da
+                carga, a identificação da carga e a carga propriamente dita.
+              </p>
+            </li>
+            <li>
+              <p class="lead">
+                Exemplificação de protocolos NFC: NDEF Exchange Protocol (SNEP);
+                NFC LLCP; e outros.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <h3 class="text-uppercase text-secondary mb-0">
+          Aspectos Positivos
+        </h3>
+        <hr>
+        <div class="row justifiedText">
+          <ul type="square">
+            <li>Rapidez e promiscuidade.</li>
+            <li>Proximidade necessária.</li>
+          </ul>
+        </div>
+        <h3 class="text-uppercase text-secondary mb-0">
+          Desafios para o crescimento
+        </h3>
+        <hr>
+        <div class="row justifiedText">
+          <ul type="square">
+            <li>
+              Necessidade de interesse da indústria e atualização tecnológica.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bibliografia -->
+    <section id="referencias">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Referências Bibliográficas</h2>
+        <hr class="mb-5">
+        <div class="row justifiedText">
+          <ol class="listaReferencias">
+            <li>
+                R. Want, "Near field communication", IEEE Pervasive Computing,
+                vol. 10, no. 3, pp. 4-7, July-September 2011.
+                doi:10.1109/MPRV.2011.55
+            </li>
+            <li>
+              McHugh , S. , and K. Yarmey, "Near Field Communication:
+              Introduction and Implications", Journal of Web Librarianship 6,
+              no. 3, pp.  186 – 207,  August 2012.
+              doi: 10.1080/19322909.2012.700610.
+            </li>
+            <li>
+              W. Hufstetler, M. Ramos, S. Wang, "NFC Unlock: Secure Two-Factor
+              Computer Authentication Using NFC", Mobile Ad Hoc and Sensor
+              Systems (MASS), October 2017. doi: 10.1109/MASS.2017.87
+            </li>
+            <li>
+              G. Ukalkar, P. Halgaonkar, "Cloud based NFC Health Card System",
+              Intelligent Computing and Control Systems (ICICCS), June 2017.
+              doi:10.1109/ICCONS.2017.8250760
+            </li>
+            <li>
+              R. Mair, "Protocol - Independent Detection of Passive Transponders
+              for Near Field Communication Systems", IEEE Transactions,
+              Instrumentation and Measurement, vol 59, pp. 814 - 819,
+              April 2010. doi: 10.1109/TIM.2009.2021243
+            </li>
+            <li>
+              <a href="https://www.techradar.com/news/what-is-nfc">"What is NFC?"</a>
+              Acessado em: 07/05/2018 às 17h18.
+            </li>
+            <li>
+              <a href="http://www.apcmag.com/inside-nfc-how-near-field-communication-works.htm/">
+                “Inside NFC: How near field communication works”
+              </a>
+              Acessado em: 07/05/2018 às 17h18.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- Portfolio Grid Section -->
     <!--
@@ -320,56 +502,11 @@
     </section>
 -->
     <!-- Footer -->
-    <footer class="footer text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Location</h4>
-            <p class="lead mb-0">2215 John Daniel Drive
-              <br>Clark, MO 65243</p>
-          </div>
-          <div class="col-md-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Around the Web</h4>
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i class="fa fa-fw fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i class="fa fa-fw fa-google-plus"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i class="fa fa-fw fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i class="fa fa-fw fa-linkedin"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i class="fa fa-fw fa-dribbble"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h4 class="text-uppercase mb-4">About Freelancer</h4>
-            <p class="lead mb-0">Freelance is a free to use, open source Bootstrap theme created by
-              <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+
 
     <div class="copyright py-4 text-center text-white">
       <div class="container">
-        <small>Copyright &copy; Your Website 2018</small>
+        <small>Copyright &copy; GTA UFRJ 2018</small>
       </div>
     </div>
 
@@ -380,139 +517,6 @@
       </a>
     </div>
 
-    <!-- Portfolio Modals -->
-
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cabin.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cake.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/circus.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/game.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/safe.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/submarine.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
