@@ -48,10 +48,10 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ecossistema">Ecossistema</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Aplicações</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#aplicacoes">Aplicações</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Conclusão</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#conclusao">Conclusão</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#referencias">Referências</a>
@@ -175,19 +175,19 @@
         <div class="row">
             <div class="col-md-3 col-lg-4 text-center">
                 <img class="img-fluid" src="img/passivo.png" alt=""><br>
-                <label style="tex">Leitura/Escrita</label>
+                <label>Leitura/Escrita</label>
             </div>
             <div class="col-md-3 col-lg-4 text-center">
                 <img class="img-fluid" src="img/p2p.png" alt=""><br>
-                <label style="tex">Peer-to-Peer</label>
+                <label>Peer-to-Peer</label>
             </div>
             <div class="col-md-3 col-lg-4 text-center">
                 <img class="img-fluid" src="img/cardemulator.png" alt=""><br>
-                <label style="tex">Emulador de cartões</label>
+                <label>Emulador de cartões</label>
             </div>
         </div>
         <hr>
-        <dv class="row">
+        <div class="row">
           <div class="justifiedText">
             <p class="lead">
               No modo passivo, somente o iniciador gera o campo de frequência
@@ -231,12 +231,134 @@
               Protocolo (do inglês Near Field Communication Interface and
               Protocol), especificando o modo da conexão, a velocidade de
               transferência de dados, protocolos de transporte, entre outros.
-              Além dele, existe o par ISO/IEC 21841 e ECMA-352 cujo definem o
-              NFCIP-2 pormenorizando o mínimo de interferência com outros
-              aparelhos.<sup><a class="text-white" href="#referencias">[2]</a>
-              </sup>
+              Além dele, existe o par ISO/IEC 21481 e ECMA-352 que define o NFCIP-2, 
+              protocolo responsável pela seleção do modo de operação.
+              <sup><a class="text-white" href="#referencias">[2]</a></sup>
             </p>
+            <br>
+            <hr>
           </div>
+        </div>
+        <div class="row">
+          <h3 class="text-uppercase text-secondary mb-0">
+              Prevenção de colisão
+          </h3>
+          
+          <div class="justifiedText">
+              <br>
+            <p class="lead">
+              A fim de não perturbar comunicações NFC existentes ou qualquer infraestrutura 
+              utilizando a frequência selecionada, iniciadores NFC deve detectar outros 
+              campos de radiofrequência antes de começar a emitir.
+              
+            
+              Caso o iniciador detecte um campo de RF dentro da janela temporal 
+              T<sub>TAI</sub> + n x T<sub>ERF</sub>, então ele deve reiniciar o processo de prevenção a colisão. 
+              Caso não, este está livre para emitir seu campo de RF.
+              <sup><a class="text-white" href="#referencias">[9]</a></sup>
+              <ul>
+                <li>T<sub>TAI</sub> = Tempo de atraso inicial. Deve ser > 4096/fc.</li>
+                <li>T<sub>ERF</sub> = Tempo de espera por RF. Deve ser 512/fc.</li>
+                <li>n = número aleatório de períodos de TERF. Deve ser 0 ≤ n ≤ 3.</li>
+              </ul>
+              Além disso, após a ativação da RF, o dispositivo aguarda um tempo (T<sub>IRFG</sub>)
+            </p> 
+            <br>  
+          </div>
+
+          <h3 class="text-uppercase text-secondary mb-0">
+              Fluxograma NFCIP-1 
+          </h3>
+          
+          <div class="justifiedText">              
+            <p class="lead">             
+              
+              <ul itemtype="square">
+                <li>
+                    Qualquer equipamento rodando NFCIP-1 deve estar inicialmente no modo “alvo” 
+                    e não gerar campos de radiofrequência. Sendo assim, deve aguardar um comando 
+                    de um dispositivo em modo “iniciador”.<sup><a class="text-white" href="#referencias">[9]</a></sup>
+                </li>
+                <li>
+                    O dispositivo NFCIP-1 poderá trocar para o estado de “iniciador” e selecionar 
+                    um dos modos de comunicação ativa ou passiva e a velocidade de transferência.
+                </li>
+                <li>
+                    O dispositivo iniciador devem testar a presença de campos de radiofrequência 
+                    e não ativar seu campo caso existam outros ao redor.
+                </li>
+                <li>
+                    Se nenhum campo for detectado, o dispositivo iniciador deve ativar o seu 
+                    próprio campo de radiofrequência a fim de ativar o dispositivo alvo.
+                </li>
+                <li>
+                    Comandos de transferência e respostas devem ser trocadas no mesmo modo de 
+                    comunicação e na mesma velocidade de transmissão.
+                </li>
+              </ul>              
+            </p> 
+            <br>  
+          </div>                    
+
+          <h3 class="text-uppercase text-secondary mb-0">
+              Protocolo de transporte 
+          </h3>
+          
+          <div class="justifiedText">              
+            <p class="lead">             
+                É dividido em três partes:
+              <ol itemtype="square">
+                <li>
+                    Ativação do protocolo, que inclui a requisição de atributos e a seleção de parâmetros.
+
+                </li>
+                <li>
+                    O protocolo de transmissão de dados.
+                </li>
+                <li>
+                    O dispositivo iniciador devem testar a presença de campos de radiofrequência 
+                    e não ativar seu campo caso existam outros ao redor.
+                </li>
+                <li>
+                    A desativação do protocolo, incluindo a deseleção e a liberação.
+                </li>                
+              </ol>
+              A figura abaixo especifica a posição do campo de transporte de dados para os formatos indicados.               
+            </p> 
+            <div class="row justify-content-center">
+                <div class="col-8 align-self-center">
+                  <img class="img-fluid" width="1000px" src="img/formatos.png" alt="">
+                </div>
+            </div> <br>
+            <p class="lead">
+                Para fc/128, o byte SB deve ser setado para F0. O byte LEN deve ser igual ao tamanho em bytes 
+                do campo de dados mais um. LEN deve ser um número entre 3 e 255, já que CMD1 e CMD2 são bytes 
+                obrigatórios reservados para setar os comandos enviados. E1 e E2 são os bytes de checagem 
+                redundante cíclica de cada formato. Já os bytes de 1 a n do campo de dados são opcionais e 
+                são usados para carregar a informação propriamente dita.
+            </p>  <br>
+          </div>
+
+          <h3 class="text-uppercase text-secondary mb-0" style="width:453px"> NFCIP-2</h3>
+          
+          <div class="justifiedText"><br>              
+            <p class="lead">             
+                Este protocolo apenas define os padrões para seleção dos modos de operação a seguir:
+              <ul itemtype="square">
+                <li>PCD (dispositivo de acoplamento por proximidade).</li>
+                <li>NFC (utilizando o NFCIP-1).</li>
+                <li>VCD (dispositivo de acoplamento por vizinhança).</li>
+                <li>PICC (cartão de circuito integrado por proximidade).</li>                                       
+              </ul>
+              O fluxograma abaixo define o funcionamento do protocolo:               
+            </p> 
+            <div class="row justify-content-center">
+                <div class="col-8 align-self-center">
+                  <img class="img-fluid" src="img/fluxograma.png" alt="">
+                </div>
+            </div> <br>           
+          </div>
+          
         </div>
         
       </div>
@@ -249,15 +371,27 @@
         <hr class="mb-5">
         <div class="row justifiedText">
           <p class="lead">
-            Um dos aspectos mais interessantes acerca do NFC está no legado de
-            protocolos criados a partir dos padrões estabelecidos pela
-            tecnologia. Com isso, diversas aplicações específicas têm sido
-            construídas, aumentando a relevância e difundindo conhecimento
-            tecnológico. Abaixo, estão listados alguns desses protocolos,
-            assim como uma discussão sobre a usabilidade de ferramentas
+            Como mencionado na introdução, Sony, Nokia e Philips criaram o NFC Forum para 
+            reunir todo o desenvolvimento das tecnologias do NFC. Porém, cada uma dessas 
+            empresas já tinha desenvolvido sua própria versão de NFC, cada uma delas com 
+            diferentes tipos de tags e protocolos.
+          </p>
+          <p class="lead">
+            Esse aspecto na criação do NFC gerou uma particularidade interessante acerca 
+            dessa tecnologia: o estabelecimento de uma vasta gama de protocolos e padrões. 
+            Cada versão possui uma limitação de memória diferente e pode operar com diferentes 
+            taxas de transmissão, além de implementarem mensagens com tamanhos diferentes. 
+            Pode parecer que toda essa variedade prejudique os desenvolvedores, porém a maioria 
+            dos sistemas fornecem API’s que lidam, de forma transparente para o desenvolvedor, 
+            com os diversos tipos de tags e protocolos.
+          </p>
+          <p class="lead">
+            Com isso, diversas aplicações específicas têm sido construídas, aumentando a 
+            relevância e difundindo conhecimento tecnológico. Abaixo, estão listados alguns 
+            desses protocolos, assim como uma discussão sobre a usabilidade de ferramentas 
             baseadas no NFC.
           </p>
-        </div>
+        </div><hr>  
         <h3 class="text-uppercase text-secondary mb-0">
           Protocolos criados a partir do NFC
         </h3>
@@ -291,8 +425,21 @@
             </li>
             <li>
               <p class="lead">
-                Exemplificação de protocolos NFC: NDEF Exchange Protocol (SNEP);
-                NFC LLCP; e outros.
+
+                NFC Logical Link Control Protocol (LLCP):<br>
+                O protocolo LLCP é um protocolo compacto responsável por estruturar 
+                a comunicação peer to peer, P2P, entre dois aparelhos portadores do 
+                NFC sem afetar a operabilidade de aplicações e chips NFC antigos. 
+                Esse protocolo teve como base o IEEE 802.2, padrão de interface 
+                utilizado por grande parte da indústria. Em sua concepção, o LLCP 
+                foi desenvolvido voltado para pequenas aplicações com transferências 
+                de dados pouco complexas e outros protocolos de rede, como IP e TCP. 
+                Em suas especificações existem duas vertentes, sem conexão e conexão 
+                orientada. Na primeira, a configuração é simples porém não existe 
+                confiabilidade e não há um roteamento estabelecido. Em contrapartida, 
+                na segunda a configuração é mais complexa, contudo existe uma maior 
+                confiabilidade, roteamento bem definido, sessões diferentes por meio 
+                de multiplexamento de camadas.
               </p>
             </li>
           </ul>
@@ -302,23 +449,57 @@
         </h3>
         <hr>
         <div class="row justifiedText">
-          <ul type="square">
-            <li>Rapidez e promiscuidade.</li>
-            <li>Proximidade necessária.</li>
-          </ul>
+          <p class="lead">
+              O NFC é uma tecnologia capaz de criar uma conexão rápida baseada na 
+              proximidade de dois aparelhos agindo como uma ponte entre o mundo físico 
+              e o mundo digital. Ao incorporar uma tag NFC, todo objeto no mundo pode 
+              se tornar em uma fonte de dados capacitando a conexão com outro aparelho 
+              e uma troca de dados.  Além disso, a transferência de dados pode ocorrer 
+              com velocidades de 106 Kb/s, 212 Kb/s, 424 Kb/s ou 848 Kb/s, ou seja 
+              podendo realizar transferências de pequenos dados quase que 
+              instantaneamente.<a href="#references"><sup>[7]</sup></a> Devido ao 
+              modo de funcionamento, tais conexões precisam ter uma certa proximidade, 
+              mais ou menos 20cm, para efetivamente ocorrerem. Tal característica 
+              traz segurança para certos tipos de utilização, já que a proximidade 
+              física limita a atuação maliciosa.   <br>           
+          </p>
         </div>
         <h3 class="text-uppercase text-secondary mb-0">
           Desafios para o crescimento
         </h3>
         <hr>
         <div class="row justifiedText">
-          <ul type="square">
-            <li>
-              Necessidade de interesse da indústria e atualização tecnológica.
-            </li>
-          </ul>
+          <p class="lead">
+              QR codes e Tags NFC possuem funções no mesmo escopo, porém a adoção de 
+              QR codes pelo mercado foi infinitamente maior, apesar das tags serem 
+              mais rápidas, discretas, práticas e de mais fácil integração aos diversos 
+              tipos de objetos. Os motivos para isso se encontram no fato que as tags 
+              possuem um custo de produção maior que os QR codes e não terem sido 
+              desenvolvido a tecnologia ou aplicação que vai impulsionar o uso de 
+              tags no mercado.
+          </p>
+          <p class="lead">
+              Para uma tecnologia se consolidar é preciso a adesão da mesma nas mais 
+              diferentes esferas do mercado pelo mundo. As pessoas buscam novas tecnologias 
+              procurando realizar certas tarefas do cotidiano mais rapidamente e com maior 
+              facilidade. O NFC é uma tecnologia com um grande potencial de expansão, porém 
+              para isso ocorrer de fato é necessário uma maior utilização                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no cotidiano do ser humano. Ásia e Europa são os 2 continentes pioneiros em pesquisa e utilização do NFC, entanto os Estados Unidos vem mostrando um maior interesse na área. Conforme um maior interesse na tecnologia seja mostrado, mais recursos serão investidos na mesma. Esse investimento não só impulsiona a expansão do NFC como um maior desenvolvimento tecnológico do mesmo, o possibilitando atingir patamares maiores.              
+          </p>
         </div>
       </div>
+    </section>
+
+    <!--Aplicações-->
+    <section id="aplicacoes" class="bg-primary text-white mb-0">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-white">Aplicações</h2>
+            <hr class="mb-5">
+        </div>
+    </section>
+
+    <!--Conclusão-->
+    <section id="conclusao">
+
     </section>
 
     <!-- Bibliografia -->
